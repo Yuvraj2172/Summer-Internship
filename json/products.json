@@ -1,0 +1,86 @@
+[
+    {
+        "image": "assets/products/f1.jpg",
+        "model-name": "shirt",
+        "price": 20,
+        "category": "men",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p2.png",
+        "model-name": "container",
+        "price": 10,
+        "category": "accessories",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p3.png",
+        "model-name": "sweater",
+        "price": 25,
+        "category": "women",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p4.png",
+        "model-name": "bag",
+        "price": 30,
+        "category": "accessories",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p5.png",
+        "model-name": "canvas",
+        "price": 15,
+        "category": "accessories",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p6.png",
+        "model-name": "goggles",
+        "price": 70,
+        "category": "accessories",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p7.png",
+        "model-name": "sweater",
+        "price": 80,
+        "category": "women",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p8.png",
+        "model-name": "purse",
+        "price": 90,
+        "category": "men",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p9.png",
+        "model-name": "blazer",
+        "price": 200,
+        "category": "men",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p10.png",
+        "model-name": "green tshirt",
+        "price": 250,
+        "category": "men",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/p1.png",
+        "model-name": "hoodie",
+        "price": 170,
+        "category": "men",
+        "inCart": 0
+    },
+    {
+        "image": "assets/products/n11.jpg",
+        "model-name": "shoes",
+        "price": 100,
+        "category": "men",
+        "inCart": 0
+    }
+]
