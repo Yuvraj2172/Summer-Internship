@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script>
         function deleteItem(e) {
             let items = [];
@@ -47,7 +48,8 @@
                 <li><a href="shop.html" class="active">Shop</a></li>
                 <li><a href="index.html#blog">Blog</a></li>
                 <li><a href="about.html">About us</a></li>
-                <li id="lg-bag"><a href="cart.html" id="cart"><i class="fa fa-cart-shopping"></i></a>
+                <li id="lg-bag"><a href="cart.html" id="cart">
+                    <i class="fa fa-cart-shopping"></i></a>
                     <span id="cart-count-info">0</span>
                 </li>
                 </li>
@@ -64,12 +66,15 @@
     <hr>
     <header>
         <ul class="indicator">
+        
             <li data-filter="all" class="active"><a href="#">All</a></li>
             <li data-filter="Women's"><a href="#">Women's</a></li>
 
             <li data-filter="Accessories"><a href="#">Accessories</a></li>
             <li data-filter="Men's"><a href="#">Men</a></li>
         </ul>
+            
+        
         <div class="filter-condition">
             <span>Sort By:</span>
             <select name="" id="select">
@@ -80,7 +85,7 @@
         </div>
     </header>
     <div class="product-field">
-        <ul class="items">
+        <ul class="items" id="items">
             <li data-category="" data-price="" class="card-item">
                 <picture class="zoom-container">
                     <img src="/assets/newarrivalsimages/n3.png" alt="" id="card-img">
@@ -89,14 +94,15 @@
                     <p class="icon">
                         <span><i class="far fa-heart" data-toggle="modal" data-target="#exampleModalCenter"></i></span>
                         <span><i class="far fa-share-square"></i></span>
-                        <span><i class="fas fa-shopping-basket"></i></span>
+                        <span><i class="fas fa-shopping-basket" data-toggle="cart.html"></i></span>
                     </p>
                     <strong>Men's</strong>
                     <span id="item-name">yellow sweater</span>
-                    <small class="add-to-cart"> Add To Cart</small>
+                    <button class="item-button add-to-cart" id="add-to-cart">Add to Cart</button>
+                   
                 </div>
-                <h4 id="item-price">$45.78</h4>
-            </li>
+                <h4 id="item-price">$45.78</h4> 
+             </li>
             <li data-category="" data-price="" class="card-item">
                 <picture>
                     <img src="/assets/newarrivalsimages/n6.png" alt="" id="card-img">
@@ -109,7 +115,7 @@
                     </p>
                     <strong>Men's</strong>
                     <span id="item-name">goggles</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$35.78</h4>
             </li>
@@ -125,7 +131,7 @@
                     </p>
                     <strong>Men's</strong>
                     <span id="item-name">shirt </span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$40.78</h4>
             </li>
@@ -141,7 +147,7 @@
                     </p>
                     <strong>Men's</strong>
                     <span id="item-name">coat</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$42.78</h4>
             </li>
@@ -157,7 +163,7 @@
                     </p>
                     <strong>Women's</strong>
                     <span id="item-name">hoodie</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$46.78</h4>
             </li>
@@ -172,8 +178,8 @@
                         <span><i class="fas fa-shopping-basket"></i></span>
                     </p>
                     <strong>Women's</strong>
-                    <span id="item-name" c>bag</span>
-                    <small class="add-to-cart"> Add To Cart</small>
+                    <span id="item-name" >bag</span>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$55.78</h4>
             </li>
@@ -189,7 +195,7 @@
                     </p>
                     <strong>Women's</strong>
                     <span id="item-name">brown sweater</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$25.78</h4>
             </li>
@@ -205,7 +211,7 @@
                     </p>
                     <strong>Women's</strong>
                     <span id="item-name">green sweater</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$20.78</h4>
             </li>
@@ -221,7 +227,7 @@
                     </p>
                     <strong>Accessories</strong>
                     <span id="item-name">container</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$15.78</h4>
             </li>
@@ -238,7 +244,7 @@
                     </p>
                     <strong>Accessories</strong>
                     <span id="item-name">canvas</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$22.78</h4>
             </li>
@@ -255,7 +261,7 @@
                     </p>
                     <strong>Accessories</strong>
                     <span id="item-name">purse</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$33.78</h4>
             </li>
@@ -273,16 +279,14 @@
                     </p>
                     <strong>Accessories</strong>
                     <span id="item-name">plazo</span>
-                    <small class="add-to-cart">Add To Cart</small>
+                    <button class="button add-to-cart" id="add-to-cart">Add to Cart</button>
                 </div>
                 <h4 id="item-price">$44.78</h4>
             </li>
         </ul>
     </div>
 
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-          </button> -->
+   
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -524,6 +528,32 @@
         </div>
       </div>
    
+  <!-- Shipping Card -->
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <img src="/assets/f1.png" alt="">
+      <h6>FREE SHIPPING</h6>
+      <p>Suffered Alteration in some form</p>
+    </div>
+    <div class="fe-box">
+      <img src="/assets/f2.png" alt="">
+      <h6>CASH ON DELIVERY</h6>
+      <P>The internet tend to repeat.</P>
+    </div>
+
+    <div class="fe-box">
+      <img src="/assets/f4.png" alt="">
+      <h6>45-DAYS RETURN</h6>
+      <p>Making it Look Like Readable</p>
+    </div>
+    <div class="fe-box">
+      <img src="/assets/f5.png" alt="">
+      <h6>OPENING ALL WEEK</h6>
+      <p>8AM - 9PM</p>
+    </div>
+
+  </section
+
       <!-- footer -->
     <footer class="section-p1 shadow-lg p-3 mb-5 bg-white rounded">
         <div class="col ">
@@ -579,8 +609,10 @@
 
   
     <script src="/JS/main.js"></script>
-    <script src="/JS/shop-page.js"></script>
-    <script src="/JS/cart.js"></script>
+    
+    <script  type="module" src="/JS/shop-page.js"></script>
+    <script  type="module" src="/JS/cart.js"></script>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

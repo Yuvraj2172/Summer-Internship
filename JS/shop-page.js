@@ -1,6 +1,6 @@
 const allFilterItems = document.querySelectorAll('.filter-item');
 const allFilterBtns = document.querySelectorAll('.filter-btn');
-const totalItems=document.querySelector('#cart-count-info')
+
 
 try {
     window.addEventListener('DOMContentLoaded', () => {
@@ -123,75 +123,73 @@ function resetActiveBtn() {
 })();
 
 
+const attToCartBtn = document.getElementsByClassName('add-to-cart');
+let items = [];
+let totalItemsCart = document.querySelector('#cart-count-info');
+for (let i = 0; i < attToCartBtn.length; i++) {
+    attToCartBtn[i].addEventListener("click", function (e) {
+        console.log(e.target.parentElement.parentElement.children[2].textContent);
+        alert("Item added to cart");
+        if (typeof (Storage) !== 'undefined') {
+            let item = {
+                id: i+1 ,
+                name: e.target.parentElement.children[2].textContent,
+                price: e.target.parentElement.parentElement.children[2].textContent,
+                no: 1
+            };
 
-	const attToCartBtn = document.getElementsByClassName('add-to-cart');
-	let items = [];
-    let totalItemsCart=document.querySelector('#cart-count-info');
-    // console.log(typeof totalItemsCart.textContent)
-	for(let i=0; i<attToCartBtn.length; i++){
-		attToCartBtn[i].addEventListener("click",function(e){   
-            console.log(e.target.parentElement.parentElement.children[2].textContent);
-            alert("Item added to cart");
-            
-            window.location.reload();
-			if(typeof(Storage) !== 'undefined'){
-				let item = {
-						id:i+1,
-						name:e.target.parentElement.children[2].textContent,
-						price:e.target.parentElement.parentElement.children[2].textContent,
-						no:1
-					};
-                    // totalItems.textContent
-				if(JSON.parse(localStorage.getItem('items')) === null){
-					items.push(item);
-                    console.log(items);
-					localStorage.setItem("items",JSON.stringify(items));
-                    console.log(items);
-					// window.location.reload();
-				}else{
-					const localItems = JSON.parse(localStorage.getItem("items"));
-					localItems.map(data=>{
-						if(item.id == data.id){
-							item.no = data.no + 1;
-                             console.log(item);
-                            // window.location.reload();
-						}else{
-							items.push(data);
-                            
-						}
-					});
-                   
-					items.push(item);
-                     
-					localStorage.setItem('items',JSON.stringify(items));
-					//window.location.reload(); 
-                    calculateTotal();
-				}
-			}else{
-				alert('local storage is not working on your browser');
-			}
-		});
-       
-	}
+            if (JSON.parse(localStorage.getItem('items')) === null) {
+                localStorage.setItem("items", JSON.stringify(items));
+                console.log(items);
+                calculateTotal();
+            } else {
+                const localItems = JSON.parse(localStorage.getItem("items"));
+                localItems.map(data => {
+                    if (item.id == data.id) {
+                        item.no = data.no + 1;
+                        console.log(item);
+                        calculateTotal();
+                    }
+                    else {
+                        items.push(data);
 
-  
-   
+                    }
+                });
 
+                items.push(item);
 
-function calculateTotal() {    let total =0;
-    items.forEach(item =>{
-        total += item.no;
+                localStorage.setItem('items', JSON.stringify(items));
+                window.location.reload();
+                calculateTotal();
+            }
+        } else {
+            alert('local storage is not working on your browser');
+        }
     });
-  
-   totalItemsCart.innerHTML = `${total}`;
-    
+    calculateTotal();
+
 }
 
-// setInterval(function(){totalItems.innerHTML = total},1000);
+const iconShopping = document.querySelector('#cart-count-info');
+let no = 0;
+JSON.parse(localStorage.getItem('items')).map(data => {
+    no = no + data.no;
+});
+iconShopping.innerHTML = no;
 
-setTimeout(calculateTotal, 1000);
 
-// function myTimer() {
-//   const date = new Date();
-// document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+
+
+function calculateTotal() {
+    let total = 0;
+    items.forEach(item => {
+        total += item.no;
+    });
+    // totalItemsCart.innerText=no;
+    totalItemsCart.innerHTML = `${total}`;
+}
+// function exporting(){
+// localStorage.setItem("counter",)
+// console.log(mainPageSpan)
 // }
+// exporting();

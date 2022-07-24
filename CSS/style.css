@@ -972,7 +972,7 @@ header {
 header ul li {
     list-style: none;
     padding: 20px;
-    margin: 10px;
+    margin: 5px;
     float: left;
     font-size: 20px;
     border-radius: 15px;
@@ -1119,7 +1119,7 @@ picture img {
     width: 90%;
 }
 
-.detail small {
+.detail small, #add-to-cart{
     background: white;
     position: absolute;
     top: 85%;
@@ -1132,7 +1132,7 @@ picture img {
     cursor: pointer;
 }
 
-.detail small:hover {
+.detail small:hover ,#add-to-cart:hover {
     background: var(--gra);
 
     color: white;
@@ -1155,4 +1155,23 @@ li h4 {
 }
 #first-table td{
     padding: 45px;
+}
+
+.cart-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top:360px;
+    right: 40px;
+    margin-bottom: 10px;
+    /* padding: 4px; */
+}
+
+.bi-plus-lg, .bi-dash-lg {
+/* padding: 3px; */
+}
+
+.card img{
+    width: 100px;
 }
