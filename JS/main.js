@@ -6,7 +6,7 @@ const Shopping = document.querySelector("#shop-now");
 
 try {
     Shopping.addEventListener("click", function () {
-        window.location.href = "shop.html";
+        window.location.href = "/HTML/shop.html";
     })
 } catch (e) {
 

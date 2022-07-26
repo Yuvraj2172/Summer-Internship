@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/style.css">
+  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/CSS/responsive.css">
     <script>
         function deleteItem(e) {
             let items = [];
@@ -62,11 +64,10 @@
         </div>
     </section>
 
-    <h2 class="text-center" style="color:#007bff">Shop <span style="color: #018878;">Page</span> </h2>
+    <h2 class="text-center shop-page-title" style="color:#007bff">Shop <span style="color: #018878;">Page</span> </h2>
     <hr>
-    <header>
+    <section id="shop-page">
         <ul class="indicator">
-        
             <li data-filter="all" class="active"><a href="#">All</a></li>
             <li data-filter="Women's"><a href="#">Women's</a></li>
 
@@ -74,7 +75,6 @@
             <li data-filter="Men's"><a href="#">Men</a></li>
         </ul>
             
-        
         <div class="filter-condition">
             <span>Sort By:</span>
             <select name="" id="select">
@@ -83,7 +83,7 @@
                 <option value="HighToLow">High to low  </option>
             </select>
         </div>
-    </header>
+    </section>
     <div class="product-field">
         <ul class="items" id="items">
             <li data-category="" data-price="" class="card-item">
