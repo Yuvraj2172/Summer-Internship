@@ -97,7 +97,8 @@
 
 @media (max-width:1369px) {
      .title h1 {
-        text-align: justify;
+        text-align: left;
+        left: 40px;
     }
 
     .filter-btns {
