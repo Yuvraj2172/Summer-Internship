@@ -96,15 +96,7 @@
 }
 
 @media (max-width:1369px) {
-    .wrapper {
-        /* display: block;
-        justify-content: center;
-        flex-direction: column; */
-
-    }
-
-
-    .title h1 {
+     .title h1 {
         text-align: justify;
     }
 
@@ -169,7 +161,22 @@
     }
     
 }
-
+@media (max-width:520px){
+    #first-table {
+       
+        width: 10%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 
 
 /* shop page ends */
+@media (max-width:1074px) and (min-width:689px) {
+    .product-field ul li {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+}
