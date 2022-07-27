@@ -129,7 +129,7 @@ let totalItemsCart = document.querySelector('#cart-count-info');
 for (let i = 0; i < attToCartBtn.length; i++) {
     attToCartBtn[i].addEventListener("click", function (e) {
         console.log(e.target.parentElement.parentElement.children[2].textContent);
-        alert("Item added to cart");
+        // alert("Item added to cart");
         if (typeof (Storage) !== 'undefined') {
             let item = {
                 id: i+1 ,

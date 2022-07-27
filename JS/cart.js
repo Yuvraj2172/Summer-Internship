@@ -89,17 +89,42 @@ const data1 = [
 
 window.onload = function () {
     try {
+
         const proceedToCheckout = document.querySelector(`#proceed-to-checkout`);
+
+        const okbtn = document.querySelector('.ok-btn');
+        const popupbox = document.querySelector('.popup-overlay');
+
         proceedToCheckout.addEventListener("click", function () {
-            alert("Your Order Has Been Placed. HAPPY SHOPPING");
-            window.location.href = `index.html`;
-        });
+            console.log('click');
+            popupbox.classList.add('active')
+
+        })
+
+        okbtn.addEventListener("click", function () {
+            popupbox.classList.remove('active');
+            window.localStorage.clear();
+            window.location.reload();
+
+        })
+
+        const cartClearButton = document.querySelector('.clear-cart-button');
+        const clearCartoverlay = document.querySelector('.clear-cart-overlay');
+        const clearCartButton = document.querySelector('#clear-cart');
+        clearCartButton.addEventListener("click", function () {
+            clearCartoverlay.classList.add('active');
+        })
+        cartClearButton.addEventListener("click",function(){
+            window.localStorage.clear();
+            window.location.reload();
+            clearCartoverlay.classList.remove("active");
+        })
         const contineShopping = document.querySelector(`#continue-shopping`);
         contineShopping.addEventListener("click", function () {
-            window.location.href = `index.html`;
+            window.location.href = `/index.html`;
         });
 
-       
+
     }
     catch (e) { }
 };
@@ -111,7 +136,7 @@ let tableData = '';
 
 
 tableData += '<tr><th>Item Name</th><th>InCart</th><th>Item Price/each</th><th></th></tr>';
-if(JSON.parse(localStorage.getItem('items'))[0] === null){
+if (JSON.parse(localStorage.getItem('items'))[0] === null) {
     tableData += '<tr><td colspan="5">No items found</td></tr>'
 } else {
     JSON.parse(localStorage.getItem('items')).map(data => {
@@ -133,20 +158,9 @@ if (JSON.parse(localStorage.getItem('items'))[0] === null) {
     });
 
 }
-
 cardBoxTable.innerHTML = tableData;
-const clearCartButton= document.querySelector('#clear-cart');
-clearCartButton.addEventListener("click",function(){
-    alert("Cart has been cleared");
-    window.localStorage.clear();
-    window.location.reload();
-    
-})
-const proceedToCheckoutBtn = document.querySelector('#proceed-to-checkout');
 
-proceedToCheckoutBtn.addEventListener("click", function () {
-    window.localStorage.clear();
-})
+
 
 
 const cartTotal = document.querySelector("#total-price");
@@ -164,7 +178,5 @@ for (let i = 1, row; row = cardBoxTable.rows[i]; i++) {
     }
 }
 totalItems.innerHTML = `${totalItemsCart}`;
-// console.log(totalItemsCart);
-// let a=0;
-// export {a};
-// export{totalItemsCart}
+
+// pop code
