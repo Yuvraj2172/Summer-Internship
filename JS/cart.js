@@ -104,7 +104,7 @@ window.onload = function () {
         okbtn.addEventListener("click", function () {
             popupbox.classList.remove('active');
             window.localStorage.clear();
-            window.location.reload();
+            window.location.href="/index.html";
 
         })
 
@@ -164,7 +164,7 @@ cardBoxTable.innerHTML = tableData;
 
 
 const cartTotal = document.querySelector("#total-price");
-cartTotal.innerHTML = ` Cart Total : $${totalCost.toFixed(2)}`;
+cartTotal.innerHTML = ` Cart Total : &#8377 ${totalCost.toFixed(2)}`;
 
 var totalItems = document.querySelector('#cart-count-info');
 
@@ -179,4 +179,4 @@ for (let i = 1, row; row = cardBoxTable.rows[i]; i++) {
 }
 totalItems.innerHTML = `${totalItemsCart}`;
 
-// pop code
+
